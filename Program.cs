@@ -22,6 +22,7 @@ namespace TrovePXHelper
         const string Special = "Special";
         static bool[] checkerboard = new bool[2];
         static bool checkerWarning = false;
+        //All Trove Block Converter block names & colors
         static readonly Dictionary<string, Color> TroveColor = new Dictionary<string, Color>
     {
         #region Primal Blocks
@@ -201,6 +202,7 @@ namespace TrovePXHelper
         {"GlowingWhite", Color.FromArgb(255, 255, 255) }
         #endregion
     };
+        //All Trove Block Converter block recipes
         static readonly List<BlockRecipe> recipes = new List<BlockRecipe>
         {
             #region Primal
@@ -381,6 +383,7 @@ namespace TrovePXHelper
 
             #endregion
         };
+        //Introductory lines in Console
         static readonly List<string> IntroductoryLines = new List<string>
         {
             "Made by: Castledking2341",
@@ -682,31 +685,6 @@ namespace TrovePXHelper
         {
             using (FileStream stream = File.Create($"ImageOutput/{directory}/{DuplicateFileName(name)}.bmp"))
                 tex.Save(stream, System.Drawing.Imaging.ImageFormat.Bmp);
-            #region
-            /*            ImageCodecInfo myImageCodecInfo;
-            Encoder myEncoder;
-            EncoderParameter myEncoderParameter;
-            EncoderParameters myEncoderParameters;
-            myImageCodecInfo = GetEncoderInfo("image/jpeg");
-            myEncoder = Encoder.Quality;
-            myEncoderParameters = new EncoderParameters(1);
-            myEncoderParameter = new EncoderParameter(myEncoder, 75L);
-            myEncoderParameters.Param[0] = myEncoderParameter;
-            tex.Save($"ImageOutput/{directory}/{name}.jpg", myImageCodecInfo, myEncoderParameters);
-            ImageCodecInfo GetEncoderInfo(String mimeType)
-            {
-                int j;
-                ImageCodecInfo[] encoders;
-                encoders = ImageCodecInfo.GetImageEncoders();
-                for (j = 0; j < encoders.Length; ++j)
-                {
-                    if (encoders[j].MimeType == mimeType)
-                        return encoders[j];
-                }
-                return null;
-            }
-            */
-            #endregion
         }
         static string DuplicateFileName(string name)
         {
